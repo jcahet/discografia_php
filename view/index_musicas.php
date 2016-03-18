@@ -1,4 +1,9 @@
-<?php include '../style/template.php';?>
+<?php 
+include '../style/template.php';
+include '../controller/MusicasController.php';
+$controller = new Musicascontroller();
+$musicas = $controller->listar();
+?>
 
 <h2>Lista de Musicas</h2>
 
@@ -11,11 +16,20 @@
             <td>autor_id</td>
         
         </tr>
+        
+        <?php
+        
+        foreach ($musicas as $value){
+           
+       ?>
         <tr>
             <td>1</td>
-            <td>Chão de Giz</td>
-            <td>10</td>
+            <td><?php echo $value->nome?></td>
+            <td><?php echo $value->autorId?></td>
         </tr>
+        <?php
+        }
+            ?> 
     </table>
     
     
