@@ -1,11 +1,11 @@
 <?php 
 include '../style/template.php';
 include '../controller/UsuarioController.php';
-$controller = new Musicascontroller();
+$controller = new Usuarioontroller();
 $musicas = $controller->listar();
 ?>
 
-<h2>Lista de Musicas</h2>
+<h2>Lista de Usuarios</h2>
 
 <div class="col-sm-10 col-sm-offset-1">
     <h2>Lista de Musicas</h2>
