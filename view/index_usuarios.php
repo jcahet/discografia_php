@@ -1,7 +1,7 @@
 <?php 
 include '../style/template.php';
 include '../controller/UsuarioController.php';
-$controller = new Usuarioontroller();
+$controller = new UsuarioController();
 $musicas = $controller->listar();
 ?>
 
