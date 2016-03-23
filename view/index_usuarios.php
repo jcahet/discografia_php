@@ -1,6 +1,6 @@
 <?php 
 include '../style/template.php';
-include '../controller/MusicasController.php';
+include '../controller/UsuarioController.php';
 $controller = new Musicascontroller();
 $musicas = $controller->listar();
 ?>
@@ -19,13 +19,13 @@ $musicas = $controller->listar();
         
         <?php
         
-        foreach ($musicas as $value){
+        foreach ($usuario as $value){
            
        ?>
         <tr>
-            <td><?php ?></td>
-            <td><?php echo $value->titulo?></td>
-            <td><?php echo $value->autor_id?></td>
+            <td><?php echo $value->id ?></td>
+            <td><?php echo $value->email?></td>
+            <td><?php echo $value->senha?></td>
         </tr>
         <?php
         }
