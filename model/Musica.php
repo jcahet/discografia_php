@@ -52,7 +52,10 @@ class Musica {
       $query->execute();
     }
     public function listarTodaAsMusicas(){
-       $sql ="SELECT * FROM musicas";    
+       $sql ="select musica.*, autor.nome from musicas "
+               . "musica inner join "
+               . "autores autor on (autor.id = musica.autor_id) "
+               . "order by musica.id desc";    
        $query = Conexao::prepare($sql);
        $query->execute();
        return $query->fetchAll();

@@ -8,7 +8,6 @@ $musicaControl = new Musicascontroller();
 
 if (isset($_POST['salvar'])){
     $musicaControl->inserir();
-    header('Location: index_musicas.php');
 }else{
     
 }
