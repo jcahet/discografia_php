@@ -20,4 +20,26 @@ class Musicascontroller {
         $musica->setAutor_id($autor_id);
         $musica->salvar();
     }
+    
+    public function deleta($id) {
+        
+        $musica = new Musica();
+        $musica->delete($id);
+        
+    }
+    
+    public function updateControle() {
+        
+        $musica = new Musica();
+        $titulo = $_GET['titulo'];
+        $autor_id = $_GET['autor_id'];
+        $midia_id = $_GET['midia_id'];
+        $id = $_POST['id'];
+        
+        $musica->setTitulo($titulo);
+        $musica->setAutor_id($autor_id);
+        $musica->setAutor_id($midia_id);
+        $musica->update($id);
+        
+    }
 }

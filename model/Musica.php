@@ -60,4 +60,23 @@ class Musica {
        $query->execute();
        return $query->fetchAll();
     }
+    
+    public function delete($id){
+        $sql ="delete from musicas where id = :id";
+        $query = Conexao::prepare($sql);
+        $query-> bindValue(":id", $id);
+        $query->execute();
+    }
+    
+    public function update($id){
+        $sql ="update musicas"
+                . "set titulo= :titulo, autor_id= :autor_id, midia_id = :midia_id"
+                . "where id = :id";
+        $query = Conexao::prepare($sql);
+        $query->bindValue(":titulo",$this->getTitulo());
+        $query->bindValue(":autor_id", $this->getAutor_id());
+        $query->bindValue("midia_id", $this->getMidia_id());
+        $query->bindValue(":id",$id);
+        $query->execute();
+    }
 }
